@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_app">
+    <sys_app action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <enforce_license>log</enforce_license>
+        <js_level>helsinki_es5</js_level>
+        <licensable>true</licensable>
+        <license_model>none</license_model>
+        <logo/>
+        <menu display_value="REST Watch">43fa464fdb179b40687c26b38a9619fe</menu>
+        <name>REST Watch</name>
+        <private>false</private>
+        <restrict_table_access>false</restrict_table_access>
+        <runtime_access_tracking/>
+        <scope>x_pisn_rw</scope>
+        <scoped_administration>false</scoped_administration>
+        <short_description>Subscribe to ServiceNow table-based events via REST</short_description>
+        <source>x_pisn_rw</source>
+        <store_correlation_id/>
+        <store_url/>
+        <sys_class_name>sys_app</sys_class_name>
+        <sys_code/>
+        <sys_created_by>dylan.lindgren</sys_created_by>
+        <sys_created_on>2018-07-19 05:36:48</sys_created_on>
+        <sys_id>64baca0fdb179b40687c26b38a96190f</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>dylan.lindgren</sys_updated_by>
+        <sys_updated_on>2018-07-19 05:48:36</sys_updated_on>
+        <template/>
+        <trackable>true</trackable>
+        <user_role display_value="x_pisn_rw.viewer" name="x_pisn_rw.viewer">ddfc4a8fdb179b40687c26b38a961901</user_role>
+        <vendor/>
+        <vendor_prefix/>
+        <version>1.0.0</version>
+    </sys_app>
+</record_update>

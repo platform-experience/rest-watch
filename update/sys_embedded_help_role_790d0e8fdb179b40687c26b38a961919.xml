@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_pisn_rw.viewer" name="x_pisn_rw.viewer">ddfc4a8fdb179b40687c26b38a961901</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>dylan.lindgren</sys_created_by>
+        <sys_created_on>2018-07-19 05:46:59</sys_created_on>
+        <sys_id>790d0e8fdb179b40687c26b38a961919</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ddfc4a8fdb179b40687c26b38a961901</sys_name>
+        <sys_package display_value="REST Watch" source="x_pisn_rw">64baca0fdb179b40687c26b38a96190f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="REST Watch">64baca0fdb179b40687c26b38a96190f</sys_scope>
+        <sys_update_name>sys_embedded_help_role_790d0e8fdb179b40687c26b38a961919</sys_update_name>
+        <sys_updated_by>dylan.lindgren</sys_updated_by>
+        <sys_updated_on>2018-07-19 05:46:59</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

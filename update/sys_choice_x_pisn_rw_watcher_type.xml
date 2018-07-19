@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="type" table="x_pisn_rw_watcher" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Insert</label>
+            <language>en</language>
+            <name>x_pisn_rw_watcher</name>
+            <sequence>0</sequence>
+            <sys_created_by>dylan.lindgren</sys_created_by>
+            <sys_created_on>2018-07-19 05:50:14</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a0bd46cfdb179b40687c26b38a961925</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>dylan.lindgren</sys_updated_by>
+            <sys_updated_on>2018-07-19 06:12:58</sys_updated_on>
+            <value>insert</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Update</label>
+            <language>en</language>
+            <name>x_pisn_rw_watcher</name>
+            <sequence>1</sequence>
+            <sys_created_by>dylan.lindgren</sys_created_by>
+            <sys_created_on>2018-07-19 05:50:30</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>96cd46cfdb179b40687c26b38a9619d6</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>dylan.lindgren</sys_updated_by>
+            <sys_updated_on>2018-07-19 06:13:20</sys_updated_on>
+            <value>update</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Delete</label>
+            <language>en</language>
+            <name>x_pisn_rw_watcher</name>
+            <sequence>2</sequence>
+            <sys_created_by>dylan.lindgren</sys_created_by>
+            <sys_created_on>2018-07-19 05:50:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>82dd46cfdb179b40687c26b38a9619ce</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>dylan.lindgren</sys_updated_by>
+            <sys_updated_on>2018-07-19 06:13:22</sys_updated_on>
+            <value>delete</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>type</element>
+            <name>x_pisn_rw_watcher</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>dylan.lindgren</sys_created_by>
+            <sys_created_on>2018-07-19 05:50:14</sys_created_on>
+            <sys_id>e5cdc2cfdb179b40687c26b38a9619e3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>type</sys_name>
+            <sys_package display_value="REST Watch" source="x_pisn_rw">64baca0fdb179b40687c26b38a96190f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="REST Watch">64baca0fdb179b40687c26b38a96190f</sys_scope>
+            <sys_update_name>sys_choice_x_pisn_rw_watcher_type</sys_update_name>
+            <sys_updated_by>dylan.lindgren</sys_updated_by>
+            <sys_updated_on>2018-07-19 05:50:14</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

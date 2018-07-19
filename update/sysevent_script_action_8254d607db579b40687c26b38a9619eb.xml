@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sysevent_script_action">
+    <sysevent_script_action action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition_script/>
+        <description/>
+        <event_name>x_pisn_rw.occurrence</event_name>
+        <name>Send REST Watch Callback</name>
+        <order>100</order>
+        <script><![CDATA[/**
+ * Handle a x_pisn_rw.occurrence event by calling back to the endpoint which the watcher was created for
+ *
+ *   parm1 - the sysid of the watcher record
+ *   parm2 - the table of the triggering record, and the sysid of the triggering record, comma separated
+ */
+
+var trigger = event.parm2.split(',');
+
+var watcher = new GlideRecord('x_pisn_rw_watcher');
+watcher.get(event.parm1);
+
+var record = new GlideRecord(trigger[0]);
+record.get(trigger[1]);
+
+gs.info('SENDING REST RESPONSE: ' + watcher.getUniqueValue() + ' to ' + watcher.getValue('callback_url') + ' ' + trigger[0] + trigger[1]);
+
+var restMessage = new sn_ws.RESTMessageV2();
+restMessage.setHttpMethod("post");
+restMessage.setEndpoint(watcher.getValue('callback_url'));
+restMessage.setRequestBody(JSON.stringify(record));
+var response = restMessage.execute();]]></script>
+        <synchronous>false</synchronous>
+        <sys_class_name>sysevent_script_action</sys_class_name>
+        <sys_created_by>dylan.lindgren</sys_created_by>
+        <sys_created_on>2018-07-19 06:19:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8254d607db579b40687c26b38a9619eb</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Send REST Watch Callback</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="REST Watch" source="x_pisn_rw">64baca0fdb179b40687c26b38a96190f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="REST Watch">64baca0fdb179b40687c26b38a96190f</sys_scope>
+        <sys_update_name>sysevent_script_action_8254d607db579b40687c26b38a9619eb</sys_update_name>
+        <sys_updated_by>dylan.lindgren</sys_updated_by>
+        <sys_updated_on>2018-07-19 06:37:20</sys_updated_on>
+    </sysevent_script_action>
+</record_update>

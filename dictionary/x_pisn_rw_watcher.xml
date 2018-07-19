@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Watcher" max_length="40" name="x_pisn_rw_watcher" type="collection">
+        <element label="Callback URL" mandatory="true" max_length="1024" name="callback_url" type="url"/>
+        <element attributes="extended_operators=VALCHANGES;CHANGESFROM;CHANGESTO" dependent="table" dependent_on_field="table" label="Conditions" max_length="4000" name="conditions" type="conditions" use_dependent_field="true"/>
+        <element attributes="base_table=task" label="Table" mandatory="true" max_length="80" name="table" type="table_name"/>
+        <element choice="3" default="create" label="Type" mandatory="true" max_length="40" name="type" type="choice">
+            <choice>
+                <element label="Insert" sequence="0" value="insert"/>
+                <element label="Update" sequence="1" value="update"/>
+                <element label="Delete" sequence="2" value="delete"/>
+            </choice>
+        </element>
+    </element>
+</database>

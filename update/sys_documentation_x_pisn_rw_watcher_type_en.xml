@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="type" label="Type" language="en" table="x_pisn_rw_watcher">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>type</element>
+            <help/>
+            <hint/>
+            <label>Type</label>
+            <language>en</language>
+            <name>x_pisn_rw_watcher</name>
+            <plural>Types</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>dylan.lindgren</sys_created_by>
+            <sys_created_on>2018-07-19 05:49:30</sys_created_on>
+            <sys_id>ee9d02cfdb179b40687c26b38a9619e6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Type</sys_name>
+            <sys_package display_value="REST Watch" source="x_pisn_rw">64baca0fdb179b40687c26b38a96190f</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="REST Watch">64baca0fdb179b40687c26b38a96190f</sys_scope>
+            <sys_update_name>sys_documentation_x_pisn_rw_watcher_type_en</sys_update_name>
+            <sys_updated_by>dylan.lindgren</sys_updated_by>
+            <sys_updated_on>2018-07-19 05:49:30</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>true</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>task</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Check and Execute REST Watchers</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous) {
+	
+	gs.info('RW: Checking for REST Watchers. Class: ' + current.getValue('sys_class_name') + ' Type: '+ current.operation());
+
+	var gr = new GlideRecord('x_pisn_rw_watcher');
+	gr.addQuery('table', current.getValue('sys_class_name'));
+	gr.addQuery('type', current.operation());
+	gr.query();
+	
+	while (gr.next()) {
+		gs.info('RW: REST Watcher found');
+		if (GlideFilter.checkRecord(current, gr.getValue('conditions'))) {
+			gs.info('RW: Condition matched! Firing Event!');
+			gs.eventQueue('x_pisn_rw.occurrence', current, gr.getUniqueValue(), current.getValue('sys_class_name') + ',' + current.getUniqueValue());
+		}
+	}
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>dylan.lindgren</sys_created_by>
+        <sys_created_on>2018-07-19 05:39:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e41bc64fdb179b40687c26b38a9619db</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Check and Execute REST Watchers</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="REST Watch" source="x_pisn_rw">64baca0fdb179b40687c26b38a96190f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="REST Watch">64baca0fdb179b40687c26b38a96190f</sys_scope>
+        <sys_update_name>sys_script_e41bc64fdb179b40687c26b38a9619db</sys_update_name>
+        <sys_updated_by>dylan.lindgren</sys_updated_by>
+        <sys_updated_on>2018-07-19 06:31:51</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=e41bc64fdb179b40687c26b38a9619db"/>
+</record_update>

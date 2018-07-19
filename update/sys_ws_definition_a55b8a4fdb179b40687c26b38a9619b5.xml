@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_definition">
+    <sys_ws_definition action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <base_uri>/api/x_pisn_rw/watcher</base_uri>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_version>No active default version</default_version>
+        <doc_link/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <is_versioned>false</is_versioned>
+        <name>REST Watcher</name>
+        <namespace>x_pisn_rw</namespace>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <service_id>watcher</service_id>
+        <short_description/>
+        <sys_class_name>sys_ws_definition</sys_class_name>
+        <sys_created_by>dylan.lindgren</sys_created_by>
+        <sys_created_on>2018-07-19 05:39:59</sys_created_on>
+        <sys_id>a55b8a4fdb179b40687c26b38a9619b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>REST Watcher</sys_name>
+        <sys_package display_value="REST Watch" source="x_pisn_rw">64baca0fdb179b40687c26b38a96190f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="REST Watch">64baca0fdb179b40687c26b38a96190f</sys_scope>
+        <sys_update_name>sys_ws_definition_a55b8a4fdb179b40687c26b38a9619b5</sys_update_name>
+        <sys_updated_by>dylan.lindgren</sys_updated_by>
+        <sys_updated_on>2018-07-19 05:39:59</sys_updated_on>
+    </sys_ws_definition>
+</record_update>
