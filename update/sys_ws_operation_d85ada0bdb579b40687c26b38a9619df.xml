@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>PUT</http_method>
+        <name>register</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+	
+	var requestBody = request.body;
+	var requestData = requestBody.data;
+	
+	var validationErrors = 0;
+	
+	var table;
+	var conditions;
+	var type;
+	var callbackUrl;
+	
+	gs.info(requestData.table + ' ' + requestData.type + ' ' + requestData.conditions);
+	
+	switch (requestData.type) {
+		case 'insert':
+			type = 'insert';
+			break;
+		case 'update':
+			type = 'update';
+			break;
+		case 'delete':
+			type = 'delete';
+			break;
+		default:
+			validationErrors++;
+			break;
+	}
+	
+	if (gs.tableExists(requestData.table)) {
+		table = requestData.table;
+	} else {
+		validationErrors++;
+	}
+	
+	if (typeof requestData.conditions === 'string') {
+		conditions = requestData.conditions;
+	} else {
+		validationErrors++;
+	}
+	
+	var re = /^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/;
+	if (re.test(requestData.callbackUrl)) {
+		callbackUrl = requestData.callbackUrl;
+	} else {
+		validationErrors++;
+	}
+	
+	var body = {};
+
+	if (validationErrors === 0) {
+		var gr = new GlideRecord('x_pisn_rw_watcher');
+		gr.setValue('table', table);
+		gr.setValue('type', type);
+		gr.setValue('conditions', conditions);
+		gr.setValue('callback_url', callbackUrl);
+
+		var sysId = gr.insert();
+		
+		if (sysId) {
+			body.sysId = sysId;
+		}
+		
+		response.setStatus(200);
+		response.setBody(body);
+	} else {
+		return new sn_ws_err.BadRequestError('Invalid input');
+	}
+	
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_pisn_rw/watcher/register</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/register</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>dylan.lindgren</sys_created_by>
+        <sys_created_on>2018-07-19 06:59:54</sys_created_on>
+        <sys_id>d85ada0bdb579b40687c26b38a9619df</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>register</sys_name>
+        <sys_package display_value="REST Watch" source="x_pisn_rw">64baca0fdb179b40687c26b38a96190f</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="REST Watch">64baca0fdb179b40687c26b38a96190f</sys_scope>
+        <sys_update_name>sys_ws_operation_d85ada0bdb579b40687c26b38a9619df</sys_update_name>
+        <sys_updated_by>dylan.lindgren</sys_updated_by>
+        <sys_updated_on>2018-07-19 07:17:59</sys_updated_on>
+        <web_service_definition display_value="REST Watcher">a55b8a4fdb179b40687c26b38a9619b5</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>
